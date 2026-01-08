@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OppRadar - AI-Powered Reddit Lead Generation Tool</title>
+    <meta name="description" content="Turn Reddit discussions into paying customers. OppRadar monitors subreddits 24/7, filters noise with AI, and delivers high-intent leads directly to you.">
+    <meta name="keywords" content="Reddit monitoring, lead generation, social listening, AI tool, SaaS sales, indie hacker tools">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oppradar.com/">
+    <meta property="og:title" content="OppRadar - AI-Powered Reddit Lead Generation Tool">
+    <meta property="og:description" content="Stop scrolling, start selling. Monitor Reddit 24/7 and find high-intent leads with AI precision.">
+    <meta property="og:image" content="assets/images/hero-og.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://oppradar.com/">
+    <meta property="twitter:title" content="OppRadar - AI-Powered Reddit Lead Generation Tool">
+    <meta property="twitter:description" content="Stop scrolling, start selling. Monitor Reddit 24/7 and find high-intent leads with AI precision.">
+    <meta property="twitter:image" content="assets/images/hero-og.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-pattern {
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-in {
+            animation: slideIn 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="radar" class="w-6 h-6 text-blue-600"></i>
+                    <span class="font-bold text-xl tracking-tight">OppRadar</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-sm font-bold text-blue-600 transition" data-i18n-nav="home">Home</a>
+                    <a href="features/monitoring.html" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition" data-i18n-nav="monitoring">Monitoring</a>
+                    <a href="features/analysis.html" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition" data-i18n-nav="analysis">AI Analysis</a>
+                    <a href="features/translation.html" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition" data-i18n-nav="translation">Translation</a>
+                    <a href="#pricing" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition" data-i18n-nav="pricing">Pricing</a>
+                    
+                    <div class="h-4 w-px bg-gray-300"></div>
+
+                    <div class="flex items-center gap-2">
+                        <button onclick="setLanguage('en')" class="text-xs font-bold hover:text-blue-600">EN</button>
+                        <button onclick="setLanguage('zh')" class="text-xs text-gray-400 hover:text-blue-600">CN</button>
+                        <button onclick="setLanguage('ja')" class="text-xs text-gray-400 hover:text-blue-600">JP</button>
+                        <button onclick="setLanguage('ko')" class="text-xs text-gray-400 hover:text-blue-600">KR</button>
+                        <button onclick="setLanguage('fr')" class="text-xs text-gray-400 hover:text-blue-600">FR</button>
+                        <button onclick="setLanguage('de')" class="text-xs text-gray-400 hover:text-blue-600">DE</button>
+                    </div>
+                    <a href="install.html" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200" data-i18n-nav="get_extension">
+                        Get Extension
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text -->
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold mb-6 border border-blue-100 animate-fade-in-up">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        Now with Local AI Translation
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                        Turn Reddit Chaos into <br/>
+                        <span class="gradient-text">Business Opportunities</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Stop wasting hours scrolling. OppRadar monitors subreddits 24/7, uses AI to filter noise, and alerts you to high-intent leads instantly.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                        <a href="install.html" class="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-200 flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="w-5 h-5"></i> Download Beta
+                        </a>
+                        <a href="#demo" class="w-full sm:w-auto bg-white text-gray-700 border border-gray-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition flex items-center justify-center gap-2">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i> Watch Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Live Feed Simulation -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white z-10 pointer-events-none"></div>
+                    <div class="bg-gray-50 rounded-2xl shadow-2xl border border-gray-200 p-4 max-w-sm mx-auto lg:mr-0 h-[480px] overflow-hidden flex flex-col relative">
+                        <!-- Header -->
+                        <div class="flex justify-between items-center mb-4 pb-2 border-b border-gray-200">
+                            <div class="flex items-center gap-2 text-gray-800 font-bold">
+                                <i data-lucide="radar" class="w-4 h-4 text-blue-600"></i> OppRadar
+                            </div>
+                            <span class="text-[10px] text-green-600 bg-green-50 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Live
+                            </span>
+                        </div>
+                        
+                        <!-- Feed -->
+                        <div id="demo-feed-container" class="flex-1 overflow-hidden relative">
+                            <!-- JS will inject cards here -->
+                        </div>
+                        
+                        <!-- Footer overlay -->
+                        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
+                    </div>
+                    
+                    <!-- Decorative Elements -->
+                    <div class="absolute -right-8 top-20 bg-white p-3 rounded-lg shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce-slow hidden lg:flex">
+                        <div class="bg-purple-100 p-2 rounded-full">
+                            <i data-lucide="brain-circuit" class="w-4 h-4 text-purple-600"></i>
+                        </div>
+                        <div class="text-xs">
+                            <p class="font-bold text-gray-800">AI Analyzing...</p>
+                            <p class="text-gray-500">Scanning r/SaaS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-blue-600 font-bold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Everything you need to dominate Reddit
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                        <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI Intent Analysis</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our AI doesn't just match keywords. It understands context, detecting purchase intent, complaints, and requests for recommendations.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6 text-purple-600">
+                        <i data-lucide="globe-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Instant Translation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Break language barriers. Instantly translate posts and summaries into your native language using local browser AI (Zero latency).
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 text-orange-600">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Real-time Alerts</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Get notified the second a relevant conversation starts. Be the first to reply and capture the lead before your competitors do.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-blue-600 font-bold tracking-wide uppercase">Community Love</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Trusted by Indie Hackers & Founders
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="User" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Alex Chen</h4>
+                            <p class="text-xs text-gray-500">SaaS Founder</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"OppRadar found me 3 paying customers in the first week. I used to spend hours searching r/SaaS manually. This tool is a game changer."</p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="User" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah Miller</h4>
+                            <p class="text-xs text-gray-500">Indie Developer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"The local translation feature is insane! I can now understand Japanese and German user feedback without copying text to Google Translate."</p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="User" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-gray-900">David Park</h4>
+                            <p class="text-xs text-gray-500">Product Manager</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"I love that it's a one-time payment. No subscription fatigue. The AI intent detection is surprisingly accurate."</p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Simple, Transparent Pricing</h2>
+                <p class="mt-4 text-lg text-gray-600">No monthly subscriptions. Pay once, use forever.</p>
+            </div>
+
+            <div class="max-w-md mx-auto bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden transform hover:-translate-y-1 transition duration-300">
+                <div class="p-8 bg-gray-900 text-white text-center relative">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <h3 class="text-xl font-medium opacity-90">Lifetime License</h3>
+                    <div class="mt-4 flex justify-center items-baseline">
+                        <span class="text-5xl font-extrabold tracking-tight">$49</span>
+                        <span class="ml-1 text-xl font-medium opacity-70">.90</span>
+                    </div>
+                    <p class="mt-2 text-sm opacity-70">One-time payment</p>
+                </div>
+                <div class="p-8 bg-gray-50">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0 mr-2"></i>
+                            <span class="text-gray-600">Unlimited Subreddit Monitoring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0 mr-2"></i>
+                            <span class="text-gray-600">Unlimited AI Analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0 mr-2"></i>
+                            <span class="text-gray-600">Real-time Notifications</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0 mr-2"></i>
+                            <span class="text-gray-600">Priority Support</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#" class="block w-full bg-blue-600 text-white text-center px-6 py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg">
+                            Get Lifetime Access
+                        </a>
+                        <p class="mt-4 text-center text-xs text-gray-500">30-day money-back guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex flex-col items-center md:items-start gap-4">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="radar" class="w-5 h-5 text-blue-600"></i>
+                        <span class="font-bold text-gray-700 text-lg">OppRadar</span>
+                    </div>
+                    <div class="text-sm text-gray-500 text-center md:text-left">
+                        &copy; 2024 OppRadar. <span data-i18n-footer="rights">All rights reserved.</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-medium">
+                    <div class="flex flex-col gap-3">
+                        <span class="text-gray-900 font-bold uppercase text-xs tracking-wider">Product</span>
+                        <a href="#features" class="text-gray-500 hover:text-blue-600 transition">Features</a>
+                        <a href="#pricing" class="text-gray-500 hover:text-blue-600 transition">Pricing</a>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <span class="text-gray-900 font-bold uppercase text-xs tracking-wider">Legal</span>
+                        <a href="privacy.html" class="text-gray-500 hover:text-blue-600 transition">Privacy Policy</a>
+                        <a href="privacy.html" class="text-gray-500 hover:text-blue-600 transition">Terms of Service</a>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <span class="text-gray-900 font-bold uppercase text-xs tracking-wider">Social</span>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-gray-900 transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+                            <a href="mailto:support@oppradar.com" class="text-gray-400 hover:text-blue-600 transition"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/demo-feed.js"></script>
+    <script>
+        // Page specific translations for Home
+        window.updateSpecificPageContent = function(lang) {
+            const translations = {
+                zh: {
+                    hero_title: "将 Reddit 吐槽转化为<br/><span class='gradient-text'>真实商机</span>",
+                    hero_desc: "停止无效的刷屏。OppRadar 全天候监控 Subreddit，利用 AI 过滤噪音，第一时间为您推送高意向客户。",
+                    feat_title: "统治 Reddit 营销所需的一切",
+                    pricing_title: "简单透明的定价",
+                    pricing_desc: "拒绝订阅制。一次付费，终身使用。"
+                },
+                ja: {
+                    hero_title: "Reddit の議論を<br/><span class='gradient-text'>ビジネスチャンスに</span>",
+                    hero_desc: "Reddit を 24 時間 365 日監視。AI がノイズを除去し、購入意欲の高いリードを即座に通知します。",
+                    feat_title: "Reddit マーケティングに必要なすべて",
+                    pricing_title: "シンプルで透明な価格",
+                    pricing_desc: "月額料金なし。一度の支払いで永久に利用可能。"
+                }
+                // Add KO, FR, DE here similarly...
+            };
+            
+            const t = translations[lang];
+            if (!t) return;
+
+            if(document.querySelector('h1')) document.querySelector('h1').innerHTML = t.hero_title;
+            if(document.querySelector('p.text-lg')) document.querySelector('p.text-lg').innerText = t.hero_desc;
+            if(document.querySelector('#features h2 + p')) document.querySelector('#features h2 + p').innerText = t.feat_title;
+            if(document.querySelector('#pricing h2')) document.querySelector('#pricing h2').innerText = t.pricing_title;
+            if(document.querySelector('#pricing p.mt-4')) document.querySelector('#pricing p.mt-4').innerText = t.pricing_desc;
+        }
+    </script>
+</body>
+</html>

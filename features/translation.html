@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local AI Translation - Chrome Built-in AI - OppRadar</title>
+    <meta name="description" content="Translate Reddit posts instantly using Chrome's built-in Gemini Nano. Privacy-first, zero latency, and free forever.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../index.html" class="flex items-center gap-2 group">
+                    <i data-lucide="radar" class="w-6 h-6 text-blue-600 group-hover:rotate-12 transition"></i>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">OppRadar</span>
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="../index.html" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition" data-i18n-nav="home">Home</a>
+                    <a href="monitoring.html" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition" data-i18n-nav="monitoring">Monitoring</a>
+                    <a href="analysis.html" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition" data-i18n-nav="analysis">AI Analysis</a>
+                    <a href="translation.html" class="text-sm font-bold text-blue-600 transition" data-i18n-nav="translation">Translation</a>
+                    
+                    <div class="h-4 w-px bg-gray-300 mx-2"></div>
+                    
+                    <div class="flex items-center gap-2">
+                        <button onclick="setLanguage('en')" class="text-xs font-bold hover:text-blue-600">EN</button>
+                        <button onclick="setLanguage('zh')" class="text-xs text-gray-400 hover:text-blue-600">CN</button>
+                        <button onclick="setLanguage('ja')" class="text-xs text-gray-400 hover:text-blue-600">JP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white pt-20 pb-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-green-700 text-xs font-semibold mb-6 border border-green-100">
+                <i data-lucide="shield-check" class="w-3 h-3"></i> Private & Offline Ready
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6" id="page-title">
+                Zero-Cost Translation with Chrome Built-in AI
+            </h1>
+            <p class="text-xl text-gray-600 leading-relaxed mb-8" id="page-desc">
+                Understand global markets without paying for API tokens. OppRadar leverages Chrome's experimental Gemini Nano to translate posts directly in your browser.
+            </p>
+            <div class="flex justify-center gap-4 text-sm font-medium text-gray-500">
+                <span class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> No API Keys</span>
+                <span class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> No Data Leakage</span>
+                <span class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Instant Speed</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-2 space-y-12">
+            <section>
+                <h2 class="text-2xl font-bold mb-4">Why Local AI Matters</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Most tools require you to send data to the cloud for translation, which is slow and costly. OppRadar uses the new <strong>Chrome Built-in AI APIs</strong>. This means the translation model runs on your own device.
+                </p>
+                <div class="bg-gray-900 text-gray-300 p-6 rounded-xl font-mono text-sm overflow-x-auto">
+                    <div class="flex gap-2 mb-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <p class="text-green-400">$ window.ai.translator.create({ source: 'en', target: 'zh' })</p>
+                    <p>> Translator Ready.</p>
+                    <p class="text-green-400">$ translator.translate("Hello World")</p>
+                    <p>> "你好，世界"</p>
+                    <p class="text-gray-500 mt-2">// Runs locally. 0ms Network Latency.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar / Internal Linking -->
+        <aside class="space-y-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                <h3 class="font-bold text-gray-900 mb-4">Explore Features</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="monitoring.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition">
+                            <i data-lucide="radar" class="w-4 h-4"></i> Monitoring
+                        </a>
+                    </li>
+                    <li>
+                        <a href="analysis.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition">
+                            <i data-lucide="brain-circuit" class="w-4 h-4"></i> AI Analysis
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-green-600 p-6 rounded-xl text-white">
+                <h3 class="font-bold text-lg mb-2">Experience Speed</h3>
+                <p class="text-green-100 text-sm mb-4">Translate instantly.</p>
+                <a href="../install.html" class="block text-center bg-white text-green-600 px-4 py-2 rounded-lg font-bold text-sm hover:bg-green-50 transition">
+                    Download Beta
+                </a>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-sm text-gray-500">&copy; 2024 OppRadar. <span data-i18n-footer="rights">All rights reserved.</span></p>
+            <div class="flex gap-6 text-sm text-gray-500">
+                <a href="../privacy.html" class="hover:text-blue-600 transition">Privacy Policy</a>
+                <a href="../index.html#pricing" class="hover:text-blue-600 transition">Pricing</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        window.updateSpecificPageContent = function(lang) {
+            const content = {
+                zh: {
+                    title: "Chrome 内置 AI 零成本翻译",
+                    desc: "无需支付 API 费用即可了解全球市场。OppRadar 利用 Chrome 实验性的 Gemini Nano 直接在您的浏览器中翻译帖子。"
+                },
+                ja: {
+                    title: "Chrome内蔵AIによるゼロコスト翻訳",
+                    desc: "APIトークンにお金を払うことなく、グローバル市場を理解できます。OppRadarはChromeの実験的なGemini Nanoを活用して、ブラウザ内で直接投稿を翻訳します。"
+                }
+            };
+            
+            if (content[lang]) {
+                document.getElementById('page-title').innerText = content[lang].title;
+                document.getElementById('page-desc').innerText = content[lang].desc;
+            }
+        }
+    </script>
+</body>
+</html>
